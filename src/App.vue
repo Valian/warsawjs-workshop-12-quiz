@@ -1,6 +1,8 @@
 <template>
-  <div>
+  <div class="container is-widescreen">
+    <router-view>
 
+    </router-view>
   </div>
 </template>
 
