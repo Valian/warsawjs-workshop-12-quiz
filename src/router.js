@@ -9,12 +9,12 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
-    ...quizRoutes,
-    ...adminRoutes,
     {
       name: 'intro',
       component: Intro,
       path: '/'
-    }
+    },
+    ...quizRoutes,
+    ...adminRoutes
   ]
 })

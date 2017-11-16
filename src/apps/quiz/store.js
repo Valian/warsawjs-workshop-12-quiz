@@ -1,4 +1,5 @@
 import { STATUSES, REWARDS } from './const'
+import Promise from 'bluebird'
 
 const question = {
   text: 'Lorem ipsum',
@@ -14,12 +15,13 @@ const question = {
 const initialState = {
   cash: 0,
   currentRound: null,
-  status: STATUSES.WAITING,
-  questions: [question]
+  status: STATUSES.NOT_STARTED,
+  questions: []
 }
 
 const getters = {
   cash: state => state.cash,
+  status: state => state.status,
   currentRound: state => state.currentRound,
   maxRounds: state => Math.min(REWARDS.length, state.questions.length),
   questions: state => state.questions
@@ -32,15 +34,20 @@ const getters = {
   }
 }
 
+const actions = {
+  initGame: ({commit}) => {
+    return Promise
+      .delay(1000)
+      .then(() => commit('resetGame', [question]))
+  }
+}
+
 const mutations = {
-  initGame: (state, questions) => {
+  resetGame: (state, questions) => {
     state.cash = 0
     state.currentRound = 0
     state.questions = questions
     state.status = STATUSES.WAITING
-  },
-  startGame: (state, questions) => {
-    state.status = STATUSES.PLAYING
   },
   answerQuestion: (state, answerNumber) => {
     const q = getters.currentQuestion(state)
@@ -60,6 +67,7 @@ const mutations = {
 }
 
 export default {
+  actions,
   getters,
   mutations,
   state: initialState,

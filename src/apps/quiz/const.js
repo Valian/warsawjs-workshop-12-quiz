@@ -1,4 +1,5 @@
 export const STATUSES = {
+  NOT_STARTED: 'not started',
   WAITING: 'waiting',
   PLAYING: 'playing',
   LOST: 'failed',
