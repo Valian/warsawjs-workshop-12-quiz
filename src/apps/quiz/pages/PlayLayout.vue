@@ -1,11 +1,11 @@
 <template functional>
-  <div class="tile is-vertical is-ancestor">
-    <div class="tile is-parent">
+  <div class="o-vertical-fill tile is-vertical is-ancestor">
+    <div class="o-vertical-fill__item o-vertical-fill__item--fixed tile is-parent">
       <div class="is-child tile box">
-        <slot name="title" class=""></slot>
+        <slot name="title"></slot>
       </div>
     </div>
-    <div class="tile">
+    <div class="o-vertical-fill__item tile">
       <div class="tile is-parent is-9">
         <div class="is-child tile box">
           <slot name="main"></slot>

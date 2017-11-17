@@ -4,7 +4,7 @@
       <div class="column is-12" v-for="question in questions">
         <div class="c-question-list__item button is-fullwidth">
           <span v-if="!question.isAnswered">{{ question.reward }}$</span>
-          <span v-else>Claimed!</span>
+          <span v-else>Won!</span>
         </div>
       </div>
     </div>

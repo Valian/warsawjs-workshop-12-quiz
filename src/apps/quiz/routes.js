@@ -1,32 +1,31 @@
 import StartGame from './pages/StartGame.vue'
 import Play from './pages/Play.vue'
-import GameLayout from './pages/GameLayout.vue'
-import store from '@/store'
+import WonWindow from './pages/Won.vue'
+import LostWindow from './pages/Lost.vue'
 import { STATUSES } from './const'
 
 export default [
   {
-    component: GameLayout,
-    path: '/',
-    children: [
-      {
-        name: 'game',
-        component: StartGame,
-        path: '/game'
-      },
-      {
-        name: 'play',
-        component: Play,
-        path: '/play',
-        beforeEnter: (to, from, next) => {
-          const status = store.getters['quiz/status']
-          if (status === STATUSES.NOT_STARTED) {
-            next({replace: true, name: 'game'})
-          } else {
-            next()
-          }
-        }
-      }
-    ]
+    name: 'game',
+    component: StartGame,
+    path: '/game'
+  },
+  {
+    name: 'play',
+    component: Play,
+    path: '/play',
+    meta: { requiredQuizStatus: STATUSES.PLAYING }
+  },
+  {
+    name: 'won',
+    component: WonWindow,
+    path: '/won',
+    meta: { requiredQuizStatus: STATUSES.WON }
+  },
+  {
+    name: 'lost',
+    component: LostWindow,
+    path: '/lost',
+    meta: { requiredQuizStatus: STATUSES.LOST }
   }
 ]

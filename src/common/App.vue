@@ -1,6 +1,6 @@
 <template>
-  <div class="container is-widescreen c-main-container">
-    <router-view>
+  <div class="c-main-container container is-widescreen o-vertical-fill">
+    <router-view class="o-vertical-fill__item o-vertical-fill__item--flex">
 
     </router-view>
   </div>
@@ -14,6 +14,8 @@ export default {
 
 <style lang="scss">
   @import '../assets/vendor';
+  @import '../assets/common';
+
   html, body {
     height: 100%;
     overflow: auto;
@@ -23,5 +25,9 @@ export default {
   }
   .c-main-container {
     padding: 20px;
+    min-height: 700px;
+
+    display: flex;
+    flex-direction: column;
   }
 </style>

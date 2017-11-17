@@ -1,26 +1,18 @@
 <template>
-  <div>
-    <h1 class="title">Rules</h1>
-    <div>
+  <div class="o-vertical-fill box has-text-centered">
+    <h1 class="o-vertical-fill__item title">Rules</h1>
+    <div class="o-vertical-fill__item">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci corporis,
       dolorem maxime non perferendis provident quasi reiciendis reprehenderit voluptatem?
       Delectus, eaque est et exercitationem iusto mollitia non possimus vel?
     </div>
-    <div class="has-text-centered">
-      <button @click="start" v-if="!startLoading">Start game</button>
-      <o-loading v-else></o-loading>
-    </div>
+    <start-game-button class="o-vertical-fill__item"></start-game-button>
   </div>
 </template>
 
 <script>
+  import StartGameButton from '../components/StartGameButton.vue'
   export default {
-    loading: ['start'],
-    methods: {
-      start () {
-        return this.$store.dispatch('quiz/initGame')
-          .then(() => this.$router.push({name: 'play'}))
-      }
-    }
+    components: { StartGameButton }
   }
 </script>

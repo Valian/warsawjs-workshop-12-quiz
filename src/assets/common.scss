@@ -1,0 +1,15 @@
+.o-vertical-fill {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    flex: 1 1;
+
+    &--fixed {
+      flex: 0 0 auto;
+    }
+
+  }
+
+}
