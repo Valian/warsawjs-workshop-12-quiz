@@ -7,16 +7,18 @@
       Delectus, eaque est et exercitationem iusto mollitia non possimus vel?
     </div>
     <div class="has-text-centered">
-      <button @click="start">Start game</button>
+      <button @click="start" v-if="!startLoading">Start game</button>
+      <o-loading v-else></o-loading>
     </div>
   </div>
 </template>
 
 <script>
   export default {
+    loading: ['start'],
     methods: {
       start () {
-        this.$store.dispatch('quiz/initGame')
+        return this.$store.dispatch('quiz/initGame')
           .then(() => this.$router.push({name: 'play'}))
       }
     }

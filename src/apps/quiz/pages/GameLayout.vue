@@ -6,7 +6,4 @@
 
 
 <style lang="scss">
-  .c-game-layout {
-    padding-top: 30px;
-  }
 </style>

@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import './vendor'
-import App from './App'
+import App from './common/App'
 import store from './store'
 import router from './router'
 

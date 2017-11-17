@@ -13,11 +13,15 @@ export default {
 </script>
 
 <style lang="scss">
-  @import './assets/vendor.scss';
+  @import '../assets/vendor';
   html, body {
     height: 100%;
+    overflow: auto;
   }
   body {
     background-image: url('/static/money-light.jpeg');
+  }
+  .c-main-container {
+    padding: 20px;
   }
 </style>

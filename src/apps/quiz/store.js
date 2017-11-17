@@ -26,7 +26,11 @@ const getters = {
   maxRounds: state => Math.min(REWARDS.length, state.questions.length),
   questions: state => state.questions
     .slice(0, getters.maxRounds(state))
-    .map((q, number) => ({...q, reward: REWARDS[number]})),
+    .map((q, number) => ({
+      ...q,
+      reward: REWARDS[number],
+      isAnswered: number < getters.currentRound(state)
+    })),
   currentQuestion: state => {
     const questions = getters.questions(state)
     const currentRound = getters.currentRound(state)
@@ -38,7 +42,14 @@ const actions = {
   initGame: ({commit}) => {
     return Promise
       .delay(1000)
-      .then(() => commit('resetGame', [question]))
+      .then(() => commit('resetGame', [
+        question,
+        question,
+        question,
+        question,
+        question,
+        question
+      ]))
   }
 }
 
@@ -47,7 +58,7 @@ const mutations = {
     state.cash = 0
     state.currentRound = 0
     state.questions = questions
-    state.status = STATUSES.WAITING
+    state.status = STATUSES.PLAYING
   },
   answerQuestion: (state, answerNumber) => {
     const q = getters.currentQuestion(state)
@@ -57,7 +68,8 @@ const mutations = {
       state.cash = q.reward
       if (currentRound < maxRounds) {
         state.currentRound += 1
-      } else {
+      }
+      if (currentRound + 1 === maxRounds) {
         state.status = STATUSES.WON
       }
     } else {
