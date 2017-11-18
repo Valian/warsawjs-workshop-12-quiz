@@ -1,17 +1,21 @@
 <template>
   <div class="c-main-container container is-widescreen">
-    <transition name="fade" mode="out-in">
-      <router-view>
-
-      </router-view>
-    </transition>
+    <div class="columns">
+      <div class="column is-offset-4 is-4 box has-text-centered">
+        <h1 class="title">Who Wants To Be a Milionaire?</h1>
+        <div>
+          <img src="/static/logo.png">
+        </div>
+        <button class="button is-fullwidth">PLAY</button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  export default {
+    name: 'app'
+  }
 </script>
 
 <style lang="scss">
@@ -29,6 +33,8 @@ export default {
   .c-main-container {
     padding: 20px;
   }
+
+  // for transitions
 
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s
