@@ -1,7 +1,7 @@
 <template>
-  <div class="c-won-window o-vertical-fill has-text-centered box">
-    <h1 class="title o-vertical-fill__item">Incorrect answer, you lost!</h1>
-    <h2 class="subtitle">Correct answer was: {{ correctAnswer }}</h2>
+  <div class="c-won-window has-text-centered box">
+    <h1 class="title">Incorrect answer, you lost!</h1>
+    <h2 class="subtitle" v-html="'Correct answer was: ' + correctAnswer"></h2>
     <start-game-button label="Try again"></start-game-button>
   </div>
 </template>

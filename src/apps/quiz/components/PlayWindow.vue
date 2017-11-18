@@ -10,8 +10,6 @@
           class="c-play-window__answer column is-half"
           @click="$emit('submit', number)"
           v-for="(answer, number) in currentQuestion.answers">
-
-
           <div
             class="button is-fullwidth is-large is-primary"
             :disabled="loading"

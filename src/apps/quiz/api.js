@@ -1,6 +1,6 @@
 import shuffle from 'lodash/shuffle'
 import axios from 'axios'
-import { DIFFICULTY_LEVELS } from './const'
+import { DIFFICULTY_LEVELS } from '@/common/const'
 
 const QUESTION_API_ENDPOINT = 'https://opentdb.com/api.php'
 

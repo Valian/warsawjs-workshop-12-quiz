@@ -1,6 +1,6 @@
 <template>
-  <div class="c-main-container container is-widescreen o-vertical-fill">
-    <router-view class="o-vertical-fill__item o-vertical-fill__item--flex">
+  <div class="c-main-container container is-widescreen">
+    <router-view>
 
     </router-view>
   </div>
@@ -25,9 +25,5 @@ export default {
   }
   .c-main-container {
     padding: 20px;
-    min-height: 700px;
-
-    display: flex;
-    flex-direction: column;
   }
 </style>

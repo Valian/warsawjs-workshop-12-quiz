@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Intro from './common/Intro.vue'
 import quizRoutes from './apps/quiz/routes'
-import adminRoutes from './apps/admin/routes'
+import adminRoutes from './apps/settings/routes'
 import store from './store'
 
 Vue.use(Router)

@@ -15,7 +15,14 @@
           [ spinnerWrapper ]
         )
       } else {
-        return this.$slots.default[0]
+        if (this.$slots.default.length === 1) {
+          return this.$slots.default[0]
+        } else {
+          return createElement(
+            'div',
+            this.$slots.default
+          )
+        }
       }
     },
     props: {

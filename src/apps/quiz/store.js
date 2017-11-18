@@ -1,4 +1,4 @@
-import { STATUSES, REWARDS, DIFFICULTY_LEVELS } from './const'
+import { STATUSES, REWARDS } from './const'
 import { getQuestions } from './api'
 import Promise from 'bluebird'
 
@@ -29,14 +29,16 @@ const getters = {
 }
 
 const actions = {
-  initGame: ({commit}, amountOfQuestions = 10) => {
-    return getQuestions(amountOfQuestions, DIFFICULTY_LEVELS.EASY)
+  initGame: ({commit, rootGetters}) => {
+    const numberOfQuestions = rootGetters['settings/numberOfQuestions']
+    const difficulty = rootGetters['settings/difficulty']
+    return getQuestions(numberOfQuestions, difficulty)
       .then(questions => commit('resetGame', questions))
   },
   answerQuestion ({commit}, answerNumber) {
     console.log('Answer dispatch')
     return Promise
-      .delay(Math.random() * 2000 + 1000)
+      .delay(Math.random() * 500 + 100)
       .then(() => commit('answerQuestion', answerNumber))
   }
 }

@@ -5,12 +5,6 @@ export const STATUSES = {
   WON: 'won'
 }
 
-export const DIFFICULTY_LEVELS = {
-  EASY: 'easy',
-  MEDIUM: 'medium',
-  HARD: 'hard'
-}
-
 export const REWARDS = [
   100,
   200,

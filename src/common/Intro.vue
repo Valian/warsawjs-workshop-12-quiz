@@ -5,6 +5,9 @@
       <div class="column">
         <router-link :to="{name: 'game'}">PLAY</router-link>
       </div>
+      <div class="column">
+        <router-link :to="{name: 'settings'}">Settings</router-link>
+      </div>
     </div>
   </div>
 </template>
