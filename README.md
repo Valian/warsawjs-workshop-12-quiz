@@ -64,6 +64,31 @@ User will face set of 10-15 questions with increasing difficulty levels. Each qu
 **Tooling**
 * [x] vue-cli
 
+## Workshop roadmap
+* [ ] Introduction to Vue
+* [ ] Installation of Vue Dev Tools
+* [ ] standalone installation example
+* [ ] Single File Components, webpack, vue-cli
+* [ ] routing theory
+* [ ] setup router
+* [ ] create Intro route and add link from the main page
+* [ ] create PlayView and add link from Intro
+* [ ] create functional Layout for PlayView using slots
+* [ ] load questions using API and created hook, add currency filter
+* [ ] Game and QuestionsBar components, props, move currency filter to global scope
+* [ ] option to answer question
+* [ ] Vuex theory
+* [ ] setup store, change structure of app, no namespacing yet
+* [ ] implement quiz store, use it in components
+* [ ] Narrow Layout
+* [ ] Won and Lost Views
+* [ ] Loading and StartGameButton components - render function, mixins
+* [ ] Add settings store app + namespacing
+* [ ] New view for settings, link from RulesView
+* [ ] Custom v-model component - DifficultySlider
+* [ ] RootGetters in quiz for accessing difficulty kept in settings store
+* [ ] Transitions on routes and questions
+
 ## Build Setup
 
 ``` bash
