@@ -3,14 +3,15 @@
     <template slot="title">
       <template>
         <h1 class="title">Round {{ currentRound + 1 }} of {{ maxRounds }}</h1>
-        <h2 class="subtitle">Currently won: {{ cash }}$</h2>
+        <h2 class="subtitle">Currently won: {{ cash | currency }}</h2>
       </template>
     </template>
     <template slot="main">
-      <play-window
-        :currentQuestion="currentQuestion"
-        @submit="submitAnswer">
-      </play-window>
+        <play-window
+          :currentQuestion="currentQuestion"
+          :loading="submitAnswerLoading"
+          @submit="submitAnswer">
+        </play-window>
     </template>
     <questions-window
       slot="side"
@@ -28,18 +29,18 @@
 
   export default {
     components: { QuestionsWindow, PlayWindow, PlayLayout },
-    data: () => ({
-      STATUSES
-    }),
+    loading: ['submitAnswer'],
     methods: {
       submitAnswer (number) {
-        this.$store.commit('quiz/answerQuestion', number)
-        if (this.status === STATUSES.WON) {
-          this.$router.push({name: 'won'})
-        }
-        if (this.status === STATUSES.LOST) {
-          this.$router.push({name: 'lost'})
-        }
+        return this.$store.dispatch('quiz/answerQuestion', number)
+          .then(() => {
+            if (this.status === STATUSES.WON) {
+              this.$router.push({name: 'won'})
+            }
+            if (this.status === STATUSES.LOST) {
+              this.$router.push({name: 'lost'})
+            }
+          })
       }
     },
     computed: mapGetters({

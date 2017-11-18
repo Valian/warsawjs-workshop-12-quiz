@@ -50,3 +50,7 @@ Vue.mixin({
     }
   }
 })
+
+Vue.filter('currency', value => '$ ' + value.toString()
+  .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+)

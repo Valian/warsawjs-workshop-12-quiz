@@ -1,8 +1,9 @@
 <template>
-  <o-loading v-if="tryAgainLoading"></o-loading>
-  <button v-else @click="tryAgain">
-    {{ label }}
-  </button>
+  <o-loading :loading="tryAgainLoading">
+    <button @click="tryAgain">
+      {{ label }}
+    </button>
+  </o-loading>
 </template>
 
 <script>

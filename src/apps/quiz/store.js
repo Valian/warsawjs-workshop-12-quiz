@@ -1,16 +1,6 @@
-import { STATUSES, REWARDS } from './const'
+import { STATUSES, REWARDS, DIFFICULTY_LEVELS } from './const'
+import { getQuestions } from './api'
 import Promise from 'bluebird'
-
-const question = {
-  text: 'Lorem ipsum',
-  correctAnswer: 1,
-  answers: [
-    'first',
-    'second',
-    'third',
-    'fourth'
-  ]
-}
 
 const initialState = {
   cash: 0,
@@ -39,17 +29,15 @@ const getters = {
 }
 
 const actions = {
-  initGame: ({commit}) => {
+  initGame: ({commit}, amountOfQuestions = 10) => {
+    return getQuestions(amountOfQuestions, DIFFICULTY_LEVELS.EASY)
+      .then(questions => commit('resetGame', questions))
+  },
+  answerQuestion ({commit}, answerNumber) {
+    console.log('Answer dispatch')
     return Promise
-      .delay(1000)
-      .then(() => commit('resetGame', [
-        question,
-        question,
-        question,
-        question,
-        question,
-        question
-      ]))
+      .delay(Math.random() * 2000 + 1000)
+      .then(() => commit('answerQuestion', answerNumber))
   }
 }
 
@@ -61,6 +49,7 @@ const mutations = {
     state.status = STATUSES.PLAYING
   },
   answerQuestion: (state, answerNumber) => {
+    console.log('Answer commit')
     const q = getters.currentQuestion(state)
     const currentRound = getters.currentRound(state)
     const maxRounds = getters.maxRounds(state)
