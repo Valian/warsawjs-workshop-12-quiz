@@ -9,60 +9,60 @@ User will face set of 10-15 questions with increasing difficulty levels. Each qu
 ## Vue.js features used in workshops
 
 **Template syntax**
-* [ ] interpolation (plus `v-once`)
-* [ ] raw html `v-html`
-* [ ] one-way binding `v-bind` (`:`)
-* [ ] conditionals `v-if` / `v-else` / `v-show`
-* [ ] events `v-on` (`@`)
-* [ ] two-way binding `v-model`
-* [ ] iteration `v-for`
+* [x] interpolation (plus `v-once`)
+* [x] raw html `v-html`
+* [x] one-way binding `v-bind` (`:`)
+* [x] conditionals `v-if` / `v-else` / `v-show`
+* [x] events `v-on` (`@`)
+* [x] two-way binding `v-model`
+* [x] iteration `v-for`
 * [ ] special directive `v-cloak`
-* [ ] class and styles
-* [ ] where to put javascript?
-* [ ] transitions and animations
+* [x] class and styles
+* [x] where to put javascript?
+* [x] transitions and animations
 
 **Components**
-* [ ] data 
-* [ ] methods
-* [ ] computed
+* [x] data 
+* [x] methods
+* [x] computed
 * [ ] watch
-* [ ] slots (default / named)
+* [x] slots (default / named)
 * [ ] lifecycle
-* [ ] nested components
-* [ ] props
-* [ ] override 
-* [ ] single file components
-* [ ] pure functional components
+* [x] nested components
+* [x] props 
+* [x] single file components
+* [x] pure functional components
 
 **Reusability**
-* [ ] mixins
-* [ ] plugins
+* [x] mixins
+* [x] plugins
 * [ ] extends
-* [ ] filters
-* [ ] custom events
+* [x] filters
+* [x] custom events
+* [x] custom model
 
 **Advanced**
-* [ ] render function
-* [ ] reactivity in depth
+* [x] render function
+* [x] reactivity in depth
 * [ ] State management with bus
 
 **Vuex**
-* [ ] store structure
-* [ ] access from components
-* [ ] mutations
-* [ ] actions
-* [ ] getters
-* [ ] namespaces
+* [x] store structure
+* [x] access from components
+* [x] mutations
+* [x] actions
+* [x] getters
+* [x] namespaces
 
 **Router**
-* [ ] templates `router-link` and `router-view`
-* [ ] defining routes `name`, `path`, `component`, `children`
-* [ ] programmatic navigation `$router.push` and `$router.go`
-* [ ] advanced - guards 
-* [ ] advanced - meta and multiple components
+* [x] templates `router-link` and `router-view`
+* [x] defining routes `name`, `path`, `component`, `children`
+* [x] programmatic navigation `$router.push` and `$router.go`
+* [x] advanced - guards 
+* [x] advanced - meta and multiple components
 
 **Tooling**
-* [ ] vue-cli
+* [x] vue-cli
 
 ## Build Setup
 
