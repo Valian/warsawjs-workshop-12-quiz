@@ -15,15 +15,16 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../assets/vendor';
-  @import '../assets/common';
+  @import 'assets/vendor';
+  @import 'assets/common';
 
   html, body {
     height: 100%;
     overflow: auto;
   }
   body {
-    background-image: url('/static/money-dark.png');
+    background-image: url('/static/money-dark-optimized.png');
+    background-size: cover;
   }
   .c-main-container {
     padding: 20px;
