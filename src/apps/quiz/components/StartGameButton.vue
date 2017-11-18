@@ -1,16 +1,12 @@
 <template>
-  <o-loading :loading="tryAgainLoading">
     <button
       class="button"
+      :disabled="tryAgainLoading"
       @click="tryAgain">
-      {{ label }}
+      <o-loading :loading="tryAgainLoading">
+        {{ label }}
+      </o-loading>
     </button>
-    <router-link
-      :to="{name: 'intro'}"
-      class="button">
-      Main menu
-    </router-link>
-  </o-loading>
 </template>
 
 <script>

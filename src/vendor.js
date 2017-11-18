@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import Loading from './common/Loading.vue'
-import Modal from './common/Modal.vue'
 import { loadingWrapper } from './utils'
 
 Vue.component('o-loading', Loading)
-Vue.component('o-modal', Modal)
 
 /* plugin for automatically binding ${name}Error and ${name}Loading values to async methods
  Usage:

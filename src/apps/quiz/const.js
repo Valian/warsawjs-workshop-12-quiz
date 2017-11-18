@@ -1,7 +1,7 @@
 export const STATUSES = {
   NOT_STARTED: 'not started',
   PLAYING: 'playing',
-  LOST: 'failed',
+  LOST: 'lost',
   WON: 'won'
 }
 

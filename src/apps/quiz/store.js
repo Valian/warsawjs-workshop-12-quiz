@@ -38,7 +38,7 @@ const actions = {
   answerQuestion ({commit}, answerNumber) {
     console.log('Answer dispatch')
     return Promise
-      .delay(Math.random() * 500 + 100)
+      .delay(Math.random() * 500 + 500)
       .then(() => commit('answerQuestion', answerNumber))
   }
 }

@@ -1,8 +1,10 @@
 <template>
   <div class="c-main-container container is-widescreen">
-    <router-view>
+    <transition name="fade" mode="out-in">
+      <router-view>
 
-    </router-view>
+      </router-view>
+    </transition>
   </div>
 </template>
 
@@ -21,9 +23,16 @@ export default {
     overflow: auto;
   }
   body {
-    background-image: url('/static/money-light.jpeg');
+    background-image: url('/static/money-dark.png');
   }
   .c-main-container {
     padding: 20px;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0
   }
 </style>

@@ -1,4 +1,4 @@
-import SettingsWindow from './pages/SettingsWindow.vue'
+import SettingsView from './pages/SettingsView.vue'
 import NarrowLayout from '@/common/NarrowLayout.vue'
 
 export default [
@@ -8,7 +8,7 @@ export default [
     children: [
       {
         path: '/settings',
-        component: SettingsWindow,
+        component: SettingsView,
         name: 'settings'
       }
     ]

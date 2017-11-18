@@ -7,7 +7,7 @@
     </div>
     <div class="o-vertical-fill__item tile">
       <div class="tile is-parent is-9">
-        <div class="is-child tile box">
+        <div class="is-child tile">
           <slot name="main"></slot>
         </div>
       </div>

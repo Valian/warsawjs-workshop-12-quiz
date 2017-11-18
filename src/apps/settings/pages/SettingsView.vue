@@ -11,7 +11,7 @@
       <div class="field">
         <label class="label">Number of questions</label>
         <div class="control">
-          <input v-model="newNumberOfQuestions" class="input" type="number">
+          <input v-model="newNumberOfQuestions" class="input" type="number" min="10" max="15">
         </div>
       </div>
       <div class="field">
@@ -43,7 +43,7 @@
       save () {
         this.$store.commit('settings/setDifficulty', this.newDifficulty)
         this.$store.commit('settings/setNumberOfQuestions', this.newNumberOfQuestions)
-        this.$router.push({name: 'intro'})
+        this.$router.push({name: 'game'})
       }
     }
   }

@@ -1,8 +1,8 @@
+import RulesView from './pages/RulesView.vue'
+import Play from './pages/PlayView.vue'
+import WonView from './pages/WonView.vue'
+import LostView from './pages/LostView.vue'
 import NarrowLayout from '@/common/NarrowLayout.vue'
-import StartGame from './pages/StartGame.vue'
-import Play from './pages/Play.vue'
-import WonWindow from './pages/Won.vue'
-import LostWindow from './pages/Lost.vue'
 import { STATUSES } from './const'
 
 export default [
@@ -18,19 +18,19 @@ export default [
     children: [
       {
         name: 'won',
-        component: WonWindow,
+        component: WonView,
         path: '/won',
         meta: { requiredQuizStatus: STATUSES.WON }
       },
       {
         name: 'lost',
-        component: LostWindow,
+        component: LostView,
         path: '/lost',
         meta: { requiredQuizStatus: STATUSES.LOST }
       },
       {
         name: 'game',
-        component: StartGame,
+        component: RulesView,
         path: '/game'
       }
     ]

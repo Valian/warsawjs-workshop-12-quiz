@@ -1,18 +1,18 @@
 <template>
   <PlayLayout>
-    <template slot="title">
-      <template>
-        <h1 class="title">Round {{ currentRound + 1 }} of {{ maxRounds }}</h1>
-        <h2 class="subtitle">Currently won: {{ cash | currency }}</h2>
-      </template>
-    </template>
-    <template slot="main">
-        <play-window
-          :currentQuestion="currentQuestion"
-          :loading="submitAnswerLoading"
-          @submit="submitAnswer">
-        </play-window>
-    </template>
+    <div slot="title" class="has-text-centered">
+      <h1 class="title">Currently won: <strong>{{ cash | currency }}</strong></h1>
+      <h2 class="subtitle">Round {{ currentRound + 1 }} of {{ maxRounds }}</h2>
+    </div>
+    <transition slot="main" name="flip" mode="out-in">
+      <play-window
+        class="box"
+        :currentQuestion="currentQuestion"
+        :loading="submitAnswerLoading"
+        :key="currentRound"
+        @submit="submitAnswer">
+      </play-window>
+    </transition>
     <questions-window
       slot="side"
       :questions="questions.slice().reverse()">
@@ -21,8 +21,8 @@
 </template>
 
 <script>
-  import QuestionsWindow from '../components/QuestionsWindow.vue'
-  import PlayWindow from '../components/PlayWindow.vue'
+  import QuestionsWindow from '../components/QuestionsBar.vue'
+  import PlayWindow from '../components/Game.vue'
   import PlayLayout from './PlayLayout.vue'
   import { mapGetters } from 'vuex'
   import { STATUSES } from '../const'
@@ -53,3 +53,12 @@
     })
   }
 </script>
+
+<style>
+  .flip-enter-active, .flip-leave-active {
+    transition: all 0.5s linear;
+  }
+  .flip-enter, .flip-leave-to {
+    transform: rotateY(90deg) scale(0.5, 1);
+  }
+</style>

@@ -1,13 +1,11 @@
 <template>
-  <div class="o-vertical-fill box has-text-centered">
-    <h1 class="title o-vertical-fill__item o-vertical-fill__item--fixed">Who Wants To Be a Milionaire?</h1>
-    <div class="columns o-vertical-fill__item">
-      <div class="column">
-        <router-link :to="{name: 'game'}">PLAY</router-link>
+  <div class="columns">
+    <div class="column is-offset-4 is-4 box has-text-centered">
+      <h1 class="title">Who Wants To Be a Milionaire?</h1>
+      <div>
+        <img src="/static/logo.png">
       </div>
-      <div class="column">
-        <router-link :to="{name: 'settings'}">Settings</router-link>
-      </div>
+      <router-link class="button is-fullwidth" :to="{name: 'game'}">PLAY</router-link>
     </div>
   </div>
 </template>
