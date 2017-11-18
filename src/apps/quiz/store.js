@@ -1,5 +1,5 @@
-import { STATUSES, REWARDS } from './const'
-import { getQuestions } from './api'
+import { STATUSES, REWARDS } from '@/common/const'
+import { getQuestions } from '@/common/api'
 import Promise from 'bluebird'
 
 const initialState = {

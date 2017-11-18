@@ -25,7 +25,7 @@
   import PlayWindow from '../components/Game.vue'
   import PlayLayout from './PlayLayout.vue'
   import { mapGetters } from 'vuex'
-  import { STATUSES } from '../const'
+  import { STATUSES } from '@/common/const'
 
   export default {
     components: { QuestionsWindow, PlayWindow, PlayLayout },

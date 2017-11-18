@@ -3,7 +3,7 @@ import Play from './pages/PlayView.vue'
 import WonView from './pages/WonView.vue'
 import LostView from './pages/LostView.vue'
 import NarrowLayout from '@/common/NarrowLayout.vue'
-import { STATUSES } from './const'
+import { STATUSES } from '@/common/const'
 
 export default [
   {
