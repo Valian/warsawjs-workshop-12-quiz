@@ -1,31 +1,68 @@
-# warsawjs-workshop-12-taboo-card-game
+# warsawjs-workshop-12-be-a-milionaire
 
-A Vue.js workshop project. Goal of this workshops is to create clone of the Taboo card game.
+A Vue.js workshop project. Goal of this workshops is to create clone of the Be a Milionaire game. It's a very popular TV show, where contestants can win up to 1 mln $. 
 
 ## Rules
 
-Taboo is a guessing game. Active player (Clue-giver) receives card with 1 big word and 5 smaller ones. He/She has to describe bold word without using 5 denied words to other players before specified number of seconds passes.  
+User will face set of 10-15 questions with increasing difficulty levels. Each question has 4 answers, only one correct. First incorrect answer ends game.
 
-There are two variants of a game:
+## Vue.js features used in workshops
 
-1. Without teams, where system randomly selects card and starts timer
-2. With two teams of at least two players each. Active user gives clues to the rest of his/her team. 
+**Template syntax**
+* [ ] interpolation (plus `v-once`)
+* [ ] raw html `v-html`
+* [ ] one-way binding `v-bind` (`:`)
+* [ ] conditionals `v-if` / `v-else` / `v-show`
+* [ ] events `v-on` (`@`)
+* [ ] two-way binding `v-model`
+* [ ] iteration `v-for`
+* [ ] special directive `v-cloak`
+* [ ] class and styles
+* [ ] where to put javascript?
+* [ ] transitions and animations
 
-Second variant is more interesting for us, so we'll implement it during workshops. 
+**Components**
+* [ ] data 
+* [ ] methods
+* [ ] computed
+* [ ] watch
+* [ ] slots (default / named)
+* [ ] lifecycle
+* [ ] nested components
+* [ ] props
+* [ ] override 
+* [ ] single file components
+* [ ] pure functional components
 
+**Reusability**
+* [ ] mixins
+* [ ] plugins
+* [ ] extends
+* [ ] filters
+* [ ] custom events
 
-## User stories
+**Advanced**
+* [ ] render function
+* [ ] reactivity in depth
+* [ ] State management with bus
 
-As a user:
-1. I can add new players to each team
-2. I can specify how long each round lasts and how much points is needed to win
-3. I can start game
+**Vuex**
+* [ ] store structure
+* [ ] access from components
+* [ ] mutations
+* [ ] actions
+* [ ] getters
+* [ ] namespaces
 
-As a team member after game start:
-1. I can see which team should guess now, score of each team and how much time is left for current round
-2. I can see randomly selected card (1 desired word + 5 denied)
-3. I can tell if team won or lost current round
-4. When any team reaches limit, I can see "game over" label and statistics. 
+**Router**
+* [ ] templates `router-link` and `router-view`
+* [ ] defining routes `name`, `path`, `component`, `children`
+* [ ] programmatic navigation `$router.push` and `$router.go`
+* [ ] advanced - guards 
+* [ ] advanced - meta and multiple components
+
+**Tooling**
+* [ ] vue-cli
 
 ## Build Setup
 
