@@ -64,6 +64,10 @@ User will face set of 10-15 questions with increasing difficulty levels. Each qu
 **Tooling**
 * [x] vue-cli
 
+## Start
+
+To start, go to branch `starting-point`  ([here](https://github.com/Valian/warsawjs-workshop-12-quiz/tree/starting-point)) and follow instructions in **README.md** file.
+
 ## Build Setup
 
 ``` bash
