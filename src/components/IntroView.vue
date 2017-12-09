@@ -5,7 +5,7 @@
       <div>
         <img src="/static/logo.png">
       </div>
-      <button class="button is-fullwidth">PLAY</button>
+      <router-link :to="{name: 'rules'}" class="button is-fullwidth">PLAY</router-link>
     </div>
   </div>
 </template>

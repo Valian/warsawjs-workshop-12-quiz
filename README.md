@@ -71,7 +71,7 @@ User will face set of 10-15 questions with increasing difficulty levels. Each qu
 * [x] Single File Components, webpack, vue-cli
 * [x] routing theory
 * [x] setup router (Split App into App and InitView)
-* [ ] create Rules route and add link from the main page
+* [x] create Rules route and add link from the main page
 * [ ] Narrow Layout for Intro and Rules, children routes
 * [ ] create PlayView and add link from Intro
 * [ ] create functional Layout for PlayView using slots
