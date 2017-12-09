@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <div class="o-vertical-fill tile is-vertical is-ancestor">
     <div class="o-vertical-fill__item o-vertical-fill__item--fixed tile is-parent">
       <div class="is-child tile box">
