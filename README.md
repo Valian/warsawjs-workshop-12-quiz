@@ -70,8 +70,9 @@ User will face set of 10-15 questions with increasing difficulty levels. Each qu
 * [ ] standalone installation example
 * [ ] Single File Components, webpack, vue-cli
 * [ ] routing theory
-* [ ] setup router
-* [ ] create Intro route and add link from the main page
+* [ ] setup router (Split App into App and InitView)
+* [ ] create Rules route and add link from the main page
+* [ ] Narrow Layout for Intro and Rules, children routes
 * [ ] create PlayView and add link from Intro
 * [ ] create functional Layout for PlayView using slots
 * [ ] load questions using API and created hook, add currency filter
@@ -80,7 +81,6 @@ User will face set of 10-15 questions with increasing difficulty levels. Each qu
 * [ ] Vuex theory
 * [ ] setup store, change structure of app, no namespacing yet
 * [ ] implement quiz store, use it in components
-* [ ] Narrow Layout
 * [ ] Won and Lost Views
 * [ ] Loading and StartGameButton components - render function, mixins
 * [ ] Add settings store app + namespacing
