@@ -4,8 +4,63 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Who Wants To Be a Milionaire?</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
-<div id="app"></div>
+<div id="app">
+  <h1>Todo</h1>
+  <ul>
+    <li v-for="todo in unfinishedTodos">
+      {{ todo.text }} - {{ todo.text | stringLength }} - {{ todo.finished }}
+      <button v-if="!todo.finished" @click="todo.finished = true">
+        Finish
+      </button>
+    </li>
+  </ul>
+  <input v-model="newTodo">
+  <button @click="addTodo('obiad')">Add todo</button>
+  <h1>Finished</h1>
+  <ul>
+    <li v-for="todo in finishedTodos">
+      {{ todo.text }}
+    </li>
+  </ul>
+  <button @click="debug">DEBUG</button>
+</div>
+<script>
+  var app = new Vue({
+  el: '#app',
+  data: {
+    todos: [
+      {text: "Aplikacja na warsztaty", finished: false },
+      {text: "Zjeść obiad", finished: false },
+      {text: "Pokazać metody", finished: true },
+    ],
+    newTodo: ''
+  },
+  methods: {
+    addTodo: function (newTodo) {
+      this.todos.push(newTodo)
+      this.newTodo = ''
+    },
+    debug: function () {
+      console.log(this.todos)
+    }
+  },
+  filters: {
+    stringLength: function (arg) {
+      return arg.length
+    }
+  },
+  computed: {
+    finishedTodos: function () {
+      return this.todos.filter(function(todo) { return todo.finished })
+    },
+    unfinishedTodos: function () {
+      return this.todos.filter(function(todo) { return !todo.finished })
+    }
+  }
+})
+</script>
 </body>
 </html>
