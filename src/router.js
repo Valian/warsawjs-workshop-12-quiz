@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import NarrowLayout from './common/NarrowLayout.vue'
 import IntroView from './components/IntroView.vue'
 import RulesView from './components/RulesView.vue'
+import PlayView from './components/PlayView.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
           name: 'rules'
         }
       ]
+    },
+    {
+      path: '/play',
+      name: 'play',
+      component: PlayView
     }
   ]
 })

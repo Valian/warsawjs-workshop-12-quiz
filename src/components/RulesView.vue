@@ -8,9 +8,9 @@
     <hr>
     <div class="columns">
       <div class="column">
-        <button class="button is-fullwidth">
+        <router-link :to="{name: 'play'}" class="button is-fullwidth">
           Start game
-        </button>
+        </router-link>
       </div>
       <div class="column">
         <button class="button is-fullwidth">
