@@ -2,8 +2,9 @@
   <div class="c-question-list">
     <div class="columns is-multiline">
       <div v-for="question in questions" class="column is-12">
-        <div class="c-question-list__item button is-fullwidth" :class="{'is-success': question.isAnswered}">
-          <span>{{ question.reward }}</span>
+        <div class="c-question-list__item button is-fullwidth"
+             :class="{'is-success': question.isAnswered}">
+          <span>{{ question.reward | currency }}</span>
         </div>
       </div>
     </div>

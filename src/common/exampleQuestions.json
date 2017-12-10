@@ -1,0 +1,38 @@
+[
+  {
+    "text": "Which Apollo mission was the first one to land on the Moon?",
+    "category": "Science & Nature",
+    "correctAnswer": 3,
+    "difficulty": "easy",
+    "answers": [
+      "Apollo 9",
+      "Apollo 13",
+      "Apollo 10",
+      "Apollo 11"
+    ]
+  },
+  {
+    "text": "Which German field marshal was known as the `Desert Fox`?",
+    "category": "History",
+    "correctAnswer": 3,
+    "difficulty": "easy",
+    "answers": [
+      "Wolfram Freiherr von Richthofen",
+      "Ernst Busch",
+      "Wilhelm List",
+      "Erwin Rommel"
+    ]
+  },
+  {
+    "text": "What is the standard SI unit for temperature?",
+    "category": "Science & Nature",
+    "correctAnswer": 0,
+    "difficulty": "easy",
+    "answers": [
+      "Kelvin",
+      "Fahrenheit",
+      "Celsius",
+      "Rankine"
+    ]
+  }
+]

@@ -1,101 +1,47 @@
 <template>
-  <div class="o-vertical-fill tile is-vertical is-ancestor">
-    <div class="o-vertical-fill__item o-vertical-fill__item--fixed tile is-parent">
-      <div class="is-child tile box">
-        <div class="has-text-centered">
-          <h1 class="title">Currently won: <strong>{{ cash }} $</strong></h1>
-          <h2 class="subtitle">Round {{ currentRound + 1 }} of {{ maxRounds }}</h2>
-        </div>
-      </div>
+  <play-layout>
+    <div slot="title" class="has-text-centered">
+      <h1 class="title">Currently won: <strong>{{ cash | currency }}</strong></h1>
+      <h2 class="subtitle">Round {{ currentRound + 1 }} of {{ maxRounds }}</h2>
     </div>
-    <div class="o-vertical-fill__item tile">
-      <div class="tile is-parent is-9">
-        <div class="is-child tile">
-          <game
-            class="box"
-            :question="currentQuestion"
-            @answer="answerQuestion"></game>
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <div class="is-child tile box">
-          <questions-bar :questions="questions.slice().reverse()"></questions-bar>
-        </div>
-      </div>
-    </div>
-  </div>
+    <transition name="flip" mode="out-in" slot="content">
+      <game
+      :question="currentQuestion"
+      v-if="currentQuestion"
+      @answered="answerQuestion"
+      :key="currentRound">
+      </game>
+    </transition>
+    <questions-bar
+      slot="sidebar"
+      :questions="questions.slice().reverse()">
+    </questions-bar>
+  </play-layout>
 </template>
 
 <script>
   import QuestionsBar from './QuestionsBar.vue'
   import Game from './Game.vue'
-  import { REWARDS } from '../common/const.js'
+  import PlayLayout from './PlayLayout.vue'
+  import { mapGetters } from 'vuex'
 
   export default {
-    components: {QuestionsBar, Game},
-    data: () => ({
-      cash: 0,
-      currentRound: 0,
-      rawQuestions: [
-        {
-          "text": "Which Apollo mission was the first one to land on the Moon?",
-          "category": "Science & Nature",
-          "correctAnswer": 3,
-          "difficulty": "easy",
-          "answers": [
-            "Apollo 9",
-            "Apollo 13",
-            "Apollo 10",
-            "Apollo 11"
-          ]
-        },
-        {
-          "text": "Which German field marshal was known as the `Desert Fox`?",
-          "category": "History",
-          "correctAnswer": 3,
-          "difficulty": "easy",
-          "answers": [
-            "Wolfram Freiherr von Richthofen",
-            "Ernst Busch",
-            "Wilhelm List",
-            "Erwin Rommel"
-          ]
-        },
-        {
-          "text": "What is the standard SI unit for temperature?",
-          "category": "Science & Nature",
-          "correctAnswer": 0,
-          "difficulty": "easy",
-          "answers": [
-            "Kelvin",
-            "Fahrenheit",
-            "Celsius",
-            "Rankine"
-          ]
-        }
-      ]
+    components: {QuestionsBar, Game, PlayLayout},
+    computed: mapGetters({
+      questions: 'questions',
+      cash: 'cash',
+      currentRound: 'currentRound',
+      status: 'status',
+      currentQuestion: 'currentQuestion',
+      maxRounds: 'maxRounds'
     }),
-    computed: {
-      currentQuestion () {
-        return this.questions[this.currentRound]
-      },
-      maxRounds () {
-        return this.rawQuestions.length
-      },
-      questions () {
-        return this.rawQuestions.map((q, i) => ({
-          ...q,
-          reward: REWARDS[i],
-          isAnswered: i < this.currentRound
-        }))
-      }
-    },
     methods: {
-      answerQuestion (answerNumber) {
-        if (this.currentQuestion.correctAnswer === answerNumber) {
-          this.cash += this.currentQuestion.reward
-          this.currentRound += 1
-        }
+      answerQuestion (index) {
+        this.$store.commit('submitAnswer', index)
+//        if (this.currentRound === this.maxRounds) {
+//          this.$router.push({name: 'won'})
+//        }
+//        this.$router.push({name: 'lost'})
       }
     }
   }

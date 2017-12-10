@@ -11,7 +11,7 @@
     <div class="o-vertical-fill__item tile">
       <div class="tile is-parent is-9">
         <div class="is-child tile">
-          <div class="box">~~Play window~~</div>
+          <game :question="question"></game>
         </div>
       </div>
       <div class="tile is-parent">
@@ -22,6 +22,12 @@
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+    components: { Game }
+  }
+</script>
 
 <style lang="scss">
 

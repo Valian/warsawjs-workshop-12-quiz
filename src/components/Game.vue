@@ -2,7 +2,7 @@
   <div class="c-game o-vertical-fill has-text-centered">
     <div class="o-vertical-fill__item o-vertical-fill__item--fixed">
       <div class="c-game__question-title">
-        Question for {{ question.reward }} $
+        Question for {{ question.reward | currency }}
       </div>
       <div class="c-game__question-difficulty" >
         Difficulty: {{ question.difficulty }}
@@ -17,15 +17,15 @@
       </div>
     </div>
     <div class="c-game__answers o-vertical-fill__item o-vertical-fill__item--fixed">
-      <div class="columns is-multiline">
+      <form class="columns is-multiline">
         <div class="column is-half" v-for="answer, index in question.answers">
           <div
             class="c-game__answer button is-large is-primary is-fullwidth"
-            @click="$emit('answer', index)">
+            @click="$emit('answered', index)">
             {{ answer }}
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </template>

@@ -2,10 +2,10 @@
   <div class="c-game o-vertical-fill has-text-centered">
     <div class="o-vertical-fill__item o-vertical-fill__item--fixed">
       <div class="c-game__question-title">
-        Question for ~~amount~~
+        Question for {{ question.reward }}
       </div>
       <div class="c-game__question-difficulty" >
-        Difficulty: ~~difficulty~~
+        Difficulty: {{ question.difficulty }}
       </div>
       <div class="c-game__question-category">
         Category: ~~category~~
@@ -27,6 +27,12 @@
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+    props: ['question']
+  }
+</script>
 
 <style lang="scss">
   .c-game {
