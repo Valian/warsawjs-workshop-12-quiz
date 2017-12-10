@@ -1,0 +1,123 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "category": "Science & Nature",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which Apollo mission was the first one to land on the Moon?",
+      "correct_answer": "Apollo 11",
+      "incorrect_answers": [
+        "Apollo 10",
+        "Apollo 9",
+        "Apollo 13"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which German field marshal was known as the `Desert Fox`?",
+      "correct_answer": "Erwin Rommel",
+      "incorrect_answers": [
+        "Ernst Busch",
+        "Wolfram Freiherr von Richthofen",
+        "Wilhelm List"
+      ]
+    },
+    {
+      "category": "Science & Nature",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the standard SI unit for temperature?",
+      "correct_answer": "Kelvin",
+      "incorrect_answers": [
+        "Fahrenheit",
+        "Celsius",
+        "Rankine"
+      ]
+    },
+    {
+      "category": "Mythology",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who was the King of Gods in Ancient Greek mythology?",
+      "correct_answer": "Zeus",
+      "incorrect_answers": [
+        "Apollo",
+        "Hermes",
+        "Poseidon"
+      ]
+    },
+    {
+      "category": "Entertainment: Film",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who plays Alice in the Resident Evil movies?",
+      "correct_answer": "Milla Jovovich",
+      "incorrect_answers": [
+        "Madison Derpe",
+        "Milla Johnson",
+        "Kim Demp"
+      ]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which Mario spin-off game did Waluigi make his debut?",
+      "correct_answer": "Mario Tennis",
+      "incorrect_answers": [
+        "Mario Party 3",
+        "Mario Kart: Double Dash!!",
+        "Mario Golf: Toadstool Tour"
+      ]
+    },
+    {
+      "category": "Entertainment: Japanese Anime & Manga",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In &quot;Future Diary&quot;, what is the name of Yuno Gasai&#039;s Phone Diary?",
+      "correct_answer": "Yukiteru Diary",
+      "incorrect_answers": [
+        "Murder Diary",
+        "Escape Diary ",
+        "Justice Diary "
+      ]
+    },
+    {
+      "category": "Entertainment: Video Games",
+      "type": "boolean",
+      "difficulty": "easy",
+      "question": "Rebecca Chambers does not appear in any Resident Evil except for the original Resident Evil and the Gamecube remake.",
+      "correct_answer": "False",
+      "incorrect_answers": [
+        "True"
+      ]
+    },
+    {
+      "category": "Geography",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the capital of Spain?",
+      "correct_answer": "Madrid",
+      "incorrect_answers": [
+        "Barcelona",
+        "Sevilla",
+        "Toledo"
+      ]
+    },
+    {
+      "category": "Entertainment: Japanese Anime & Manga",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of the following originated as a manga?",
+      "correct_answer": "Akira",
+      "incorrect_answers": [
+        "Cowboy Bebop",
+        "High School DxD",
+        "Gurren Lagann"
+      ]
+    }
+  ]
+}
